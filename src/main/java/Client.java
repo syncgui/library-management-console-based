@@ -10,8 +10,12 @@ public class Client {
         Scanner input = new Scanner(System.in);
 
         while (option != 5) {
-            System.out.println("1. Add book\n2. Delete book\n" +
-                    "3. Search book by title\n4. Search book by author\n5. Close the program");
+            System.out.println("""
+                    1. Add book
+                    2. Delete book
+                    3. Search book by title
+                    4. Search book by author
+                    5. Close the program""");
             System.out.print("Select a option by typing the corresponding number: ");
             option = input.nextInt();
 

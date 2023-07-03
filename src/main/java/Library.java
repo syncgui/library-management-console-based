@@ -39,14 +39,14 @@ public class Library {
     }
 
     public List<Book> searchByAuthor(String author) {
-        List<Book> restult = new ArrayList<>();
+        List<Book> result = new ArrayList<>();
         for (Book book : bookList.values()) {
             if (book.getAuthor().equalsIgnoreCase(author)) {
-                restult.add(book);
+                result.add(book);
             } else {
                 System.out.println("Entered auhtor does not match");
             }
         }
-    return restult;
+    return result;
     }
 }
