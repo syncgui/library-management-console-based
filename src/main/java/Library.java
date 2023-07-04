@@ -1,5 +1,3 @@
-
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,6 +5,7 @@ import java.util.List;
 public class Library {
 
     public Library() {
+
         this.bookList = new HashMap<>();
     }
 
@@ -14,15 +13,15 @@ public class Library {
 
     public void addBook(Book book) {
         bookList.put(book.getIsbn(), book);
-        System.out.println("Book successfully added");
+        System.out.println("Book successfully added!");
     }
 
     public void deleteBook(Long isbn) {
         if (bookList.containsKey(isbn)) {
             bookList.remove(isbn);
-            System.out.println("Book successfully deleted");
+            System.out.println("Book successfully deleted!");
         } else {
-            System.out.println("Invalid ISBN Number");
+            System.out.println("Invalid ISBN Number!");
         }
     }
 
@@ -31,8 +30,6 @@ public class Library {
         for (Book book : bookList.values()) {
             if (book.getTitle().equalsIgnoreCase(title)) {
                 result.add(book);
-            } else {
-                System.out.println("Entered title does not match");
             }
         }
         return result;
@@ -43,10 +40,8 @@ public class Library {
         for (Book book : bookList.values()) {
             if (book.getAuthor().equalsIgnoreCase(author)) {
                 result.add(book);
-            } else {
-                System.out.println("Entered auhtor does not match");
             }
         }
-    return result;
+        return result;
     }
 }

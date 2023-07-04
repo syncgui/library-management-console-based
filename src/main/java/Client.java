@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class Client {
@@ -26,9 +27,9 @@ public class Client {
                     String bookTitle = input.nextLine();
                     System.out.print("Type the author name: ");
                     String authorName = input.nextLine();
-                    System.out.print("Type the number of copies avaliable: ");
+                    System.out.print("Type the number of copies available: ");
                     int numerOfCopies = input.nextInt();
-                    System.out.print("Type the ISBN numer: ");
+                    System.out.print("Type the ISBN number: ");
                     Long isbnNumber = input.nextLong();
                     Book book = new Book(bookTitle, authorName, isbnNumber, numerOfCopies);
                     library.addBook(book);
@@ -42,13 +43,32 @@ public class Client {
                     System.out.print("Type the title of the book you want to search: ");
                     input.nextLine();
                     String titleToSearch = input.nextLine();
-                    library.searchByTitle(titleToSearch).forEach(System.out::println);
+
+                    List<Book> books = library.searchByTitle(titleToSearch);
+
+                    if (books.isEmpty()) {
+                        System.out.println("No books found!");
+                    } else {
+                        for (Book book : books) {
+                            System.out.println(book);
+                        }
+                    }
+//                    library.searchByTitle(titleToSearch).forEach(System.out::println);
                 }
                 case 4 -> { // search by author
                     System.out.print("Type the title of the author you want to search: ");
                     input.nextLine();
                     String authorToSearch = input.nextLine();
-                    library.searchByAuthor(authorToSearch).forEach(System.out::println);
+
+                    List<Book> books = library.searchByAuthor(authorToSearch);
+
+                    if (books.isEmpty()) {
+                        System.out.println("No authors found!");
+                    } else {
+                        for (Book book : books) {
+                            System.out.println(book);
+                        }
+                    }
                 }
             }
         }
