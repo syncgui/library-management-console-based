@@ -30,7 +30,11 @@ public class Client {
                     System.out.print("Type the number of copies available: ");
                     int numerOfCopies = input.nextInt();
                     System.out.print("Type the ISBN number: ");
-                    Long isbnNumber = input.nextLong();
+                    long isbnNumber = input.nextLong();
+                    while (library.checkIfISBNExists(isbnNumber)) {
+                        System.out.print("Type the ISBN number: ");
+                        isbnNumber = input.nextLong();
+                    }
                     Book book = new Book(bookTitle, authorName, isbnNumber, numerOfCopies);
                     library.addBook(book);
                 }
