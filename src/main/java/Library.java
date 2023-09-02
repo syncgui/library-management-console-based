@@ -17,11 +17,7 @@ public class Library {
     }
 
     public boolean checkIfISBNExists(Long ISBN) {
-        if (bookList.containsKey(ISBN)) {
-            System.out.println("ISBN may already exists!");
-            return true;
-        }
-        return false;
+        return bookList.containsKey(ISBN);
     }
 
     public void deleteBook(Long isbn) {
